@@ -14,13 +14,12 @@ s.get("https://facebook.com")
 
 #parse cookies
 cookieStr = ""
-cookies = [
-  {'name': c.name, 'value': c.value, 'domain': c.domain, 'path': c.path}
-  for c in s.cookies
-       	]
+cookies = [ {'name': c.name, 'value': c.value, 'domain': c.domain, 'path': c.path} for c in s.cookies ]
 for cookie in cookies:
 	cookie['domain'] = cookie['domain'][1:]
 	cookie['domain'] = "https://"+cookie['domain']
+
+#create url	
 cookies = json.dumps(cookies)
 cookieStr = base64.b64encode(bytes(cookies, 'utf-8')).decode()
 url = base64.b64encode(bytes(redirectUrl, 'utf-8')).decode()
