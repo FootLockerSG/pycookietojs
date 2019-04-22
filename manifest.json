@@ -1,0 +1,10 @@
+{
+  "name" : "kaiser cookie tool",
+  "version" : "1",
+  "description" : "KaiserFramework.com",
+  "permissions": [ "cookies","<all_urls>", "tabs"],
+  "browser_action": {
+    "default_popup":"popup.html"
+  },
+  "manifest_version": 2
+}
