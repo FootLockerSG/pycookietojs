@@ -14,10 +14,7 @@ s.get("https://facebook.com")
 
 #parse cookies
 cookieStr = ""
-cookies = [ {'name': c.name, 'value': c.value, 'domain': c.domain, 'path': c.path} for c in s.cookies ]
-for cookie in cookies:
-	cookie['domain'] = cookie['domain'][1:]
-	cookie['domain'] = "https://"+cookie['domain']
+cookies = [ {'name': c.name, 'value': c.value, 'domain': "https://"+c.domain[1:]} for c in s.cookies ]
 
 #create url	
 cookies = json.dumps(cookies)
